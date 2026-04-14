@@ -1,9 +1,11 @@
 name: Publish npm + MCP Registry
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "v*"
+      - "*.*.*"
 
 jobs:
   publish:
@@ -28,17 +30,29 @@ jobs:
       - name: Validate release metadata and package
         run: npm run release:check
 
+      - name: Ensure required secrets are set for tag publish
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          if [ -z "${{ secrets.NPM_TOKEN }}" ]; then
+            echo "NPM_TOKEN secret is required for tag-based publishing." >&2
+            exit 1
+          fi
+
       - name: Publish package to npm
+        if: startsWith(github.ref, 'refs/tags/')
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install mcp-publisher
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
           curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher
 
       - name: Authenticate to MCP Registry (GitHub OIDC)
+        if: startsWith(github.ref, 'refs/tags/')
         run: ./mcp-publisher login github-oidc
 
       - name: Publish to MCP Registry
+        if: startsWith(github.ref, 'refs/tags/')
         run: ./mcp-publisher publish
