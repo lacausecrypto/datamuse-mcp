@@ -1,11 +1,11 @@
 # datamuse-mcp
 
-[![npm version](https://img.shields.io/npm/v/datamuse-mcp?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/datamuse-mcp)
-[![npm downloads](https://img.shields.io/npm/dt/datamuse-mcp?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/datamuse-mcp)
-[![license](https://img.shields.io/npm/l/datamuse-mcp?style=for-the-badge)](./LICENSE)
-[![node](https://img.shields.io/node/v/datamuse-mcp?style=for-the-badge&logo=node.js)](https://www.npmjs.com/package/datamuse-mcp)
-[![github release](https://img.shields.io/github/v/release/lacausecrypto/datamuse-mcp?style=for-the-badge&logo=github)](https://github.com/lacausecrypto/datamuse-mcp/releases)
-[![publish workflow](https://img.shields.io/github/actions/workflow/status/lacausecrypto/datamuse-mcp/publish.yml?style=for-the-badge&logo=githubactions&label=publish)](https://github.com/lacausecrypto/datamuse-mcp/actions/workflows/publish.yml)
+[![npm version](https://img.shields.io/npm/v/datamuse-mcp?style=flat&logo=npm)](https://www.npmjs.com/package/datamuse-mcp)
+[![npm downloads](https://img.shields.io/npm/dt/datamuse-mcp?style=flat&logo=npm)](https://www.npmjs.com/package/datamuse-mcp)
+[![license](https://img.shields.io/npm/l/datamuse-mcp?style=flat)](./LICENSE)
+[![node](https://img.shields.io/node/v/datamuse-mcp?style=flat&logo=node.js)](https://www.npmjs.com/package/datamuse-mcp)
+[![github release](https://img.shields.io/github/v/release/lacausecrypto/datamuse-mcp?style=flat&logo=github)](https://github.com/lacausecrypto/datamuse-mcp/releases)
+[![publish workflow](https://img.shields.io/github/actions/workflow/status/lacausecrypto/datamuse-mcp/publish.yml?style=flat&logo=githubactions&label=publish)](https://github.com/lacausecrypto/datamuse-mcp/actions/workflows/publish.yml)
 
 MCP server for the Datamuse API (word search, rhymes, synonyms, and more).
 
