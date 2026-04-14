@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.lacausecrypto/datamuse-mcp",
+  "title": "Datamuse MCP",
+  "description": "MCP server for Datamuse word-finding API",
+  "repository": {
+    "url": "https://github.com/lacausecrypto/datamuse-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "datamuse-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

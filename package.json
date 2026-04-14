@@ -1,0 +1,59 @@
+{
+  "name": "datamuse-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Datamuse word-finding API",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "mcpName": "io.github.lacausecrypto/datamuse-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lacausecrypto/datamuse-mcp.git"
+  },
+  "homepage": "https://github.com/lacausecrypto/datamuse-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/lacausecrypto/datamuse-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "datamuse",
+    "thesaurus",
+    "rhyme",
+    "nlp"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "bin": {
+    "datamuse-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "pack:check": "npm pack --dry-run",
+    "release:check": "node scripts/check-release.mjs && npm run build && npm run pack:check",
+    "prepublishOnly": "npm run release:check"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
+    "tsx": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
