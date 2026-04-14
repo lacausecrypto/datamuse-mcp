@@ -4,6 +4,11 @@ MCP server for the Datamuse API (word search, rhymes, synonyms, and more).
 
 This project is open source, free to use, and licensed under MIT.
 
+## About
+
+`datamuse-mcp` is a local stdio MCP server that wraps Datamuse endpoints into validated MCP tools.
+It is designed for practical word-finding use cases in assistants and clients that support MCP.
+
 ## Purpose
 
 This server provides simple MCP tools to:
@@ -45,6 +50,18 @@ echo '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | node dist/index.js
 
 # Call a tool
 echo '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"find_synonyms","arguments":{"word":"happy"}}}' | node dist/index.js
+```
+
+## More tool examples
+
+```json
+{ "tool": "find_antonyms", "arguments": { "word": "happy", "max": 10 } }
+{ "tool": "find_rhymes", "arguments": { "word": "love", "type": "perfect", "max": 20 } }
+{ "tool": "find_similar_sounding", "arguments": { "text": "definately", "max": 15 } }
+{ "tool": "find_by_pattern", "arguments": { "pattern": "s??r?", "meaning_hint": "celestial", "max": 25 } }
+{ "tool": "find_related_words", "arguments": { "word": "music", "relation_type": "triggers", "max": 15 } }
+{ "tool": "get_word_info", "arguments": { "word": "serendipity" } }
+{ "tool": "autocomplete", "arguments": { "prefix": "astro", "max": 10 } }
 ```
 
 ## Claude Desktop configuration
